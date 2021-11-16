@@ -1,0 +1,271 @@
+<mvc:View controllerName="com.gsk.zphysicalinventory.controller.Worklist"
+	xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar"
+	xmlns:core="sap.ui.core" xmlns:html="http://www.w3.org/1999/xhtml">
+	<html:style>
+		.labelHeadingClass{ font-weight: bold !important; color:
+		#003057 !important; } .sapUiSizeCompact
+		.sapMListTblNavCol>.sapMLIBImgNav { width:
+		auto; color: red;
+		font-weight: bold!important; font-size: larger; }
+
+		.sapMITBFilter
+		.sapMITBText {
+		line-height: 0.9375rem;
+		overflow: hidden;
+		padding:
+		0.375rem 0 0;
+		position: relative;
+		width:
+		12.29rem;
+		text-shadow: 0 0
+		0.125rem #fff;
+		font-weight: bold !important;
+		color:
+		#003057
+		!important;
+		font-size: 16px;
+		word-wrap:break-word
+		}
+		.sapMITBTab {
+		width: 13rem;
+		display: block;
+		}
+
+		.yellow {
+		background-color: #FFFF66;
+		}
+
+		.sapMTB-Transparent-CTX
+		.sapMBtn:not(.sapMBtnDisabled)>.sapMBtnInner:not(.sapMIE):not(.sapMToggleBtnPressed):not(.sapMBtnEmphasized):not(.sapMBtnAccept):not(.sapMBtnReject):not(.sapMBtnGhost):not(.sapMBtnActive)
+		{
+		background-image: none;
+		background: #babd08f2;
+		border-color: #b00;
+		}
+
+	</html:style>
+	<Page id="S3"  >
+		<content>
+			<IconTabBar id="TABCONT_ROLE_INFO">
+				<items>
+					<IconTabFilter icon="sap-icon://detail-view" key="List"
+						text="{i18n>Documentsearch}" class="sapMITBFilter">
+						<content>
+
+							<VBox class="sapUiTinyMargin">
+
+								
+								<f:Form id="idDocumentSearch" editable="true">
+								
+									<f:layout>
+										<f:ResponsiveGridLayout labelSpanXL="4"
+											labelSpanL="4" labelSpanM="4" labelSpanS="12"
+											adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0"
+											emptySpanM="0" emptySpanS="0" columnsXL="3" columnsL="2"
+											columnsM="2" singleContainerFullSize="false" />
+									</f:layout>
+									<f:formContainers>
+										<f:FormContainer>
+											<f:formElements>
+												<f:FormElement label="Material Number">
+													<f:fields>
+														<Input value="" id="idtableNameColumnTitle" />
+													</f:fields>
+												</f:FormElement>
+												<f:FormElement label="Storage Bin">
+													<f:fields>
+														<Input value=""  id="idBin" />
+													</f:fields>
+												</f:FormElement>
+												<!-- <f:FormElement label="{i18n>Description}"> <f:fields> <Input 
+													value="" id="idDescription" /> </f:fields> </f:FormElement> -->
+												<f:FormElement label="Plant">
+													<f:fields>
+														<Input value="" id="idCreatedBy" />
+													</f:fields>
+												</f:FormElement>
+												<f:FormElement label="Storage Location">
+													<f:fields>
+														<Input value="" id="idCoordinator" />
+													</f:fields>
+												</f:FormElement>
+											</f:formElements>
+										</f:FormContainer>
+										<f:FormContainer>
+											<f:formElements>
+
+												<f:FormElement label="Document Date">
+													<f:fields>
+														<DatePicker id="idNotificationFromDate"
+															valueFormat="yyyy-MM-dd" displayFormat="dd-MM-yyyy" />
+													</f:fields>
+												</f:FormElement>
+												<f:FormElement label="Planned Count Date">
+													<f:fields>
+														<DatePicker id="idNotificationToDate"
+															valueFormat="yyyy-MM-dd" displayFormat="dd-MM-yyyy" />
+														<!-- <DatePicker id="idNotificationToDate" displayFormat="short" 
+															value="{path: '',type: 'sap.ui.model.type.Date', formatOptions: { style: 
+															'medium', strictParsing: true , UTC: true }}" /> -->
+													</f:fields>
+												</f:FormElement>
+
+												<f:FormElement label="Storage Location">
+													<f:fields>
+														<Input value="" id="idMaterial" />
+													</f:fields>
+												</f:FormElement>
+												<!-- <f:FormElement label="{i18n>PlantforMaterial}">
+													<f:fields>
+														<Input value="" id="idPlantforMaterial" />
+													</f:fields>
+												</f:FormElement> -->
+
+												<f:FormElement label="">
+													<f:fields>
+														<Button type="Emphasized" text="{i18n>search}"
+															press="onSearchStorageBin" />
+														<Button type="Emphasized" text="{i18n>reset}"
+															press="onReset" />
+													</f:fields>
+												</f:FormElement>
+											</f:formElements>
+										</f:FormContainer>
+									</f:formContainers>
+								</f:Form>
+							</VBox>
+							<Table id="tableSearch" width="auto" items="{/stocks}"
+								noDataText="{worklistView>/tableNoDataText}" busyIndicatorDelay="{worklistView>/tableBusyDelay}"
+								growing="true" growingScrollToLoad="true">
+								<headerToolbar>
+									<Toolbar>
+										<ToolbarSpacer />
+										<SearchField id="searchField" tooltip="{i18n>worklistSearchTooltip}" placeholder="Enter Storage Bin No." search="onSearch" width="auto"></SearchField>
+										
+										
+										
+									</Toolbar>
+								</headerToolbar>
+								<columns>
+									<Column hAlign="Center">
+										<header>
+											<Label text="Material Number" class="labelHeadingClass" />
+										</header>
+									</Column>
+									
+									<Column hAlign="Center">
+										<header>
+											<Label text="Manufacturer PartNo" class="labelHeadingClass" />
+										</header>
+									</Column>
+									
+									<Column hAlign="Center">
+										<header>
+											<Label text="Storage Location" class="labelHeadingClass" />
+										</header>
+									</Column>
+									<Column hAlign="Center">
+										<header>
+											<Label text="Storage Bin" class="labelHeadingClass" />
+										</header>
+									</Column>
+									<Column hAlign="Center">
+										<header>
+											<Label text="Class" class="labelHeadingClass" />
+										</header>
+									</Column>
+									<Column hAlign="Center">
+										<header>
+											<Label text="Class Description" class="labelHeadingClass" />
+										</header>
+									</Column>
+									<Column hAlign="Center">
+										<header>
+											<Label text="Count" class="labelHeadingClass" />
+										</header>
+									</Column>
+									<Column hAlign="Center">
+										<header>
+											<Label text="Total Value" class="labelHeadingClass" />
+										</header>
+									</Column>
+
+
+
+								</columns>
+								<items>
+									<ColumnListItem type="Navigation" press="onPress">
+										<cells>
+											<ObjectIdentifier title="{materialNo}" />
+											<Text text="{manufacturerPartNo}" />
+											<Text text="{Sloc}" />
+											<Text text="{storageBin}" />
+											<Text text="{class}" />
+											<Text text="{classDisc}" />
+											<Text text="{reorder}" />
+											<Text text="{totalValue}{currency}" />
+											<!-- <Text
+												text="{path:'notificationSearchModel>QmdatFr',formatter:'.formatter.formatDate'}" /> -->
+										</cells>
+									</ColumnListItem>
+								</items>
+							</Table>
+
+						</content>
+					</IconTabFilter>
+					<IconTabFilter icon="sap-icon://ui-notifications"
+						key="List" text="{i18n>CreatePhysicalInve}" class="sapMITBFilter">
+						<content>
+							<f:SimpleForm class="editableForm"   width="100rem"
+							columnsXL="3"
+							columnsL="2" 
+							columnsM="2" 
+							editable="true"
+							emptySpanXL="0" 
+							emptySpanL="1" 
+							emptySpanM="1"
+							emptySpanS="1" 
+							id="createPhysicalInventory"
+							labelSpanXL="4"
+							labelSpanL="4" 
+							labelSpanM="4" 
+							labelSpanS="10"
+							adjustLabelSpan="false"
+							layout="ResponsiveGridLayout" 
+							singleContainerFullSize="false"
+							maxContainerCols="2" minWidth="1024"
+							 >
+							 
+							<f:content>
+								<Label class="sapUiSmallMarginTop"   text="{i18n>XSelctDocDate}"  />
+								<DatePicker id="idSelectdocDate" displayFormat="long" change="handleChange"/>
+								
+								<Label class="sapUiSmallMarginTop"   text="{i18n>XPlannedCountDate}"  />
+									<DatePicker id="idPlannedDocDate" displayFormat="long" change="handleChange"/>
+			
+								<Label class="sapUiSmallMarginTop"   text="{i18n>XPLANT}"  />
+								<Input class="sapUiSmallMarginTop" type="Text"  showValueHelp="true" valueHelpOnly="true" 
+									   valueHelpRequest="showPlantList"  id="idPlant"></Input>  
+									
+								<Label class="sapUiSmallMarginTop"   text="{i18n>XStorageLoca}"  />
+								<Input class="sapUiSmallMarginTop"   showValueHelp="true" valueHelpOnly="true" 
+											   valueHelpRequest="showStorageLocation"  id="idStorageLocation"></Input>  
+								 
+								<Label  class="sapUiSmallMarginTop" text="{i18n>XStorageBin}" visible="true"  />
+									<Select id="idStorageBin" class="sapUiSmallMarginTop"   >
+									</Select>
+								
+								<Label class="sapUiSmallMarginTop" text="" visible="true" design="Bold"/> 
+							   
+							</f:content>
+						</f:SimpleForm>
+						</content>
+					</IconTabFilter>
+
+				</items>
+			</IconTabBar>
+		</content>
+
+	</Page>
+</mvc:View>

@@ -1,0 +1,153 @@
+{  
+    "stocks": [{  
+        "materialNo": 113566,   
+        "storageBin": "PTCA011201",   
+        "class":  "M001310",
+        "classDisc":"Gear",
+        "reorder":1,
+        "totalValue":20,
+        "currency":"EUR",
+        "unrestricted":1,
+        "ctrKey":"ZM001",
+        "mrpController":"Z50",
+        "manufacturerPartNo":"P680204014",
+        "Sloc":5000
+        
+    },
+    {  
+        "materialNo": 113567,   
+        "storageBin": "PTCA011202",   
+        "class":  "M001311",
+        "classDisc":"Angle/Bar/Plate",
+        "reorder":2,
+        "totalValue":10,
+        "currency":"EUR",
+        "unrestricted":2,
+        "ctrKey":"ZM001",
+        "mrpController":"Z50",
+        "manufacturerPartNo":"",
+        "Sloc":5000
+        
+    },
+    {  
+        "materialNo": 113568,   
+        "storageBin": "PTCA011203",   
+        "class":  "M001312",
+        "classDisc":"Electrical",
+        "reorder":1,
+        "totalValue":1,
+        "currency":"EUR",
+        "unrestricted":3,
+        "ctrKey":"ZM001",
+        "mrpController":"Z50",
+        "manufacturerPartNo":"",
+        "Sloc":""
+        
+    },
+    {  
+        "materialNo": 113569,   
+        "storageBin": "PTCA011204",   
+        "class":  "M001313",
+        "classDisc":"Springs",
+        "reorder":5,
+        "totalValue":6,
+        "currency":"EUR",
+        "unrestricted":2,
+        "ctrKey":"ZM001",
+        "mrpController":"Z50",
+        "manufacturerPartNo":"",
+        "Sloc":5000
+        
+    },
+    {  
+        "materialNo": 113570,   
+        "storageBin": "PTCA011205",   
+        "class":  "M001314",
+        "classDisc":"Supports",
+        "reorder":5,
+        "totalValue":12,
+        "currency":"EUR",
+        "unrestricted":5,
+        "ctrKey":"ZM001",
+        "mrpController":"Z50",
+        "manufacturerPartNo":"",
+        "Sloc":5000
+        
+    },
+    {  
+        "materialNo": 113571,   
+        "storageBin": "PTCA011206",   
+        "class":  "M001315",
+        "classDisc":"Bushing",
+        "reorder":2,
+        "totalValue":10,
+        "currency":"EUR",
+        "unrestricted":5,
+        "ctrKey":"ZM001",
+        "mrpController":"Z50",
+        "manufacturerPartNo":"P680204014",
+        "Sloc":5000
+        
+    },
+    {  
+        "materialNo": 113572,   
+        "storageBin": "PTCA011207",   
+        "class":  "M001316",
+        "classDisc":"Belts",
+        "reorder":1,
+        "totalValue":100,
+        "currency":"EUR",
+        "unrestricted":2,
+        "ctrKey":"ZM001",
+        "mrpController":"Z50",
+        "manufacturerPartNo":"",
+        "Sloc":5000
+        
+    },
+    {  
+        "materialNo": 113573,   
+        "storageBin": "PTCA011208",   
+        "class":  "M001317",
+        "classDisc":"Shafts",
+        "reorder":1,
+        "totalValue":150,
+        "currency":"EUR",
+        "unrestricted":2,
+        "ctrKey":"ZM001",
+        "mrpController":"Z50",
+        "manufacturerPartNo":"",
+        "Sloc":5000
+        
+    },
+    {  
+        "materialNo": 113574,   
+        "storageBin": "PTCA011209",   
+        "class":  "M001318",
+        "classDisc":"Pins",
+        "reorder":1,
+        "totalValue":10,
+        "currency":"EUR",
+        "unrestricted":1,
+        "ctrKey":"ZM001",
+        "mrpController":"Z50",
+        "manufacturerPartNo":"",
+        "Sloc":5000
+        
+    },
+    {  
+        "materialNo": 113575,   
+        "storageBin": "PTCA011210",   
+        "class":  "M001319",
+        "classDisc":"Sensor",
+        "reorder":10,
+        "totalValue":15,
+        "currency":"EUR",
+        "unrestricted":1,
+        "ctrKey":"ZM001",
+        "mrpController":"Z50",
+        "manufacturerPartNo":"P680204014",
+        "Sloc":5000
+        
+    }
+    ]
+}  
