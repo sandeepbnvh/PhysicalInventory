@@ -45,7 +45,7 @@ sap.ui.define([
 				},
 				onSearchStorageBina: function() {
 			
-					var NotfNo = this.getView().byId("idBin").getValue();
+				//	var NotfNo = this.getView().byId("idBin").getValue();
 					
 					if(NotfNo==""){
 						
